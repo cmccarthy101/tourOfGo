@@ -7,7 +7,7 @@ import (
 
 func TestWordCount(t * testing.T) {
 
-	s := "This is a string. I like This string."
+	s := "This is a string? I like This string."
 
 	mpTest := WordCount(s)
 	mpTruth := make(map[string]int)
