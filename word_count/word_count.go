@@ -7,7 +7,7 @@ import (
 )
 
 
-func removePunct(s string) string {
+func RemovePunct(s string) string {
 
 	fmt.Println("Removing punctuation from string.")
 
@@ -15,8 +15,8 @@ func removePunct(s string) string {
 
 	for _, c := range s {
 		fmt.Printf("Testing the character %c\n", c)
-		if unicode.IsPunct(c) {
-			fmt.Printf("  - The character %c is a punctuation mark!\n", c)
+		if !unicode.IsLetter(c) && !unicode.IsSpace(c){
+			fmt.Printf("  - The character %c is not a letter!\n", c)
 			continue
 		}
 
@@ -27,10 +27,9 @@ func removePunct(s string) string {
 }
 
 func WordCount(s string) map[string]int {
-
-	//s = strings.Replace(s, ".", "", -1)
+	
 	s = strings.ToLower(s)
-	s = removePunct(s)
+	s = RemovePunct(s)
 
 	a := strings.Fields(s)
 

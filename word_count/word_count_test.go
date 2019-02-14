@@ -5,6 +5,19 @@ import (
 	"testing"
 )
 
+func TestRemovePunct(t * testing.T) {
+
+	s := "This, is! a. string? I; like' This` string."
+	stIdeal := "This is a string I like This string"
+	stTest := RemovePunct(s)
+
+
+	if stTest != stIdeal {
+
+		t.Errorf("expected string of %s, but got string %s\n", stIdeal, stTest)
+	}
+}
+
 func TestWordCount(t * testing.T) {
 
 	s := "This is a string? I like This string."
